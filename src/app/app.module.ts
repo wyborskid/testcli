@@ -4,14 +4,14 @@ import { FormsModule }          from '@angular/forms';
 import { HttpModule }           from '@angular/http';
 import { RouterModule }         from '@angular/router';
 import { NgbModule }            from '@ng-bootstrap/ng-bootstrap';
+import { AppRoutingModule }     from './app-routing.module';
 
 import { AppComponent }         from './app.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 import { HeroesComponent }      from './heroes/heroes.component';
-import { HeroService }          from './providers/hero.service';
 import { DashboardComponent }   from './dashboard/dashboard.component';
 
-
+import { HeroService }          from './providers/hero.service';
 
 @NgModule({
   declarations: [
@@ -25,28 +25,11 @@ import { DashboardComponent }   from './dashboard/dashboard.component';
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
-    RouterModule.forRoot([{
-        path: 'heroes',
-        component: HeroesComponent
-      },
-      {
-        path: 'dashboard',
-        component: DashboardComponent
-      },
-      {
-        path: '',
-        redirectTo: '/dashboard',
-        pathMatch: 'full'
-      },
-      // {
-      //   path: 'detail/:id',
-      //   component: HeroDetailComponent
-      // }
-    ])
+    AppRoutingModule
   ],
   providers: [
     HeroService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
