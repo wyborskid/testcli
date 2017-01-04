@@ -4,7 +4,12 @@ import { FormsModule }          from '@angular/forms';
 import { HttpModule }           from '@angular/http';
 import { RouterModule }         from '@angular/router';
 import { NgbModule }            from '@ng-bootstrap/ng-bootstrap';
+
 import { AppRoutingModule }     from './app-routing.module';
+
+// Imports for loading & configuring the in-memory web api
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
 
 import { AppComponent }         from './app.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
@@ -25,11 +30,10 @@ import { HeroService }          from './providers/hero.service';
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
-  providers: [
-    HeroService
-  ],
+  providers: [ HeroService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
