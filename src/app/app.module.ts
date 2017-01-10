@@ -19,6 +19,8 @@ import { DashboardComponent }   from './dashboard/dashboard.component';
 import { HeroService }          from './providers/hero.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 
+import './rxjs-extensions';
+
 @NgModule({
   declarations: [
     AppComponent,
