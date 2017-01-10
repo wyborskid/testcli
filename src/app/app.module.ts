@@ -33,7 +33,9 @@ import { HeroService }          from './providers/hero.service';
     AppRoutingModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
-  providers: [ HeroService ],
+  providers: [ 
+    HeroService
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
